@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "User Pages" do
+describe "User Pages" do 
   subject { page }
 
   describe "signup page" do
@@ -54,6 +54,7 @@ describe "User Pages" do
         let(:user)  { User.find_by_email( "example@example.com")}
         it { should have_selector('title', text: user.name)}
         it { should have_selector('div.alert.alert-success', text: 'Welcome')}
+        it {should have_link('Sign out')}
 
       end   
      end 
